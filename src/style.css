@@ -1,0 +1,68 @@
+ul {
+    list-style: none;
+}
+
+.forecast {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+.date {
+    text-align: center;
+    color: blue;
+    font-size: 18px;
+}
+
+.day {
+    font-size: 17px;
+}
+
+.daytime {
+    color: brown;
+    margin-top: -90px;
+    margin-left: -68px;
+    font-size: 20px;
+}
+
+.night {
+    color: brown;
+    margin-top: 18px;
+    margin-left: -68px;
+    font-size: 20px;
+}
+
+.humidity {
+    text-decoration: none;
+    color: red;
+}
+
+.weatherinfo {
+    margin-top: 30px;
+}
+
+.lagos {
+    margin-top: 35px;
+}
+
+a:link {
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.rainy {
+    font-size: 30px;
+}
+
+.temp {
+    font-size: 40px;
+    margin-left: 10px;
+}
+
+.units {
+    font-size: 12px;
+    position: relative;
+    margin-left: -5px;
+    font-weight: bold;
+    top: -20px;
+}
