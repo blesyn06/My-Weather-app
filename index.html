@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/b224cd0dbb.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,800&display=swap" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="src/style.css" />
+    <title>Wireframe Homework</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="weather-app">
+            <h1>WeatherPro</h1>
+
+            <form class="search-form" id="search-form">
+                <div class="row">
+                    <div class="col-5">
+                        <input type="search" class="form-control" placeholder="Type in a city" id="city-input" />
+                    </div>
+                    <div class="col-3">
+                        <input type="submit" class="form-control btn btn-primary" value=" Search" />
+                    </div>
+                    <div class="col-3">
+                      <button class = "btn btn-success w-100" id="current-location-button">
+                        current
+                      </button>
+                    </div>
+                </div>
+
+            </form>
+
+
+            <div class="row">
+                <div class="col-5 lagos">
+                    <ul>
+                        <li>
+                            <h2 id="city"></h2>
+                        </li>
+                        <li>
+                            <span class="today" id="date">
+                                <li id="description"> Partly Cloudy</li>
+                                <h2></h2>
+                            </span>
+                        </li>
+                        <li>
+
+                            <i class="fa-solid fa-cloud-sun-rain rainy"></i>
+                            <span class="temp" id="temperature"> </span>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="col-2 weatherinfo">
+                    <ul>
+                     
+                        <li>Humidity: <span id="humidity1"></span>%</li>
+                        <li> Wind: <span id="wind1"></span>km/h</li>
+                       
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <div class="row">
+                <div class="col-3 humidity">
+                    <a href="#"> Humidity</a>
+                </div>
+
+                <div class="col-3 wind">
+                    Wind
+                </div>
+
+            </div>
+            <hr>
+            <h3 class="forecast"> Five days weather forecast</h3>
+            <h3 class="date"> November 27, 2022 - December 1, 2022.</h3>
+
+            <div class="row">
+                <div class="col-2 ">
+                    <ul>
+
+                        <li class="day"> Sunday </li>
+
+
+                        <li> <i class="fa-solid fa-cloud-sun-rain">30°C</i> </li>
+                        <br>
+                        <li> <i class="fa-solid fa-cloud-sun-rain">29°C</i> </li>
+                    </ul>
+                </div>
+
+                <div class="col-2  ">
+                    <ul>
+                        <li class="day"> Monday </li>
+                        <li> <i class="fa-solid fa-cloud-sun-rain">31°C</i> </li><br>
+                        <li> <i class="fa-solid fa-cloud-bolt">24°C</i> </li>
+                    </ul>
+                </div>
+
+                <div class="col-2 ">
+                    <ul>
+                        <li class="day"> Tuesday </li>
+                        <li> <i class="fa-solid fa-cloud-sun-rain">32°C</i> </li>
+                        <br> <i class="fa-solid fa-cloud-bolt">24°C</i> </li>
+                    </ul>
+                </div>
+
+
+                <div class="col-2 ">
+                    <ul>
+                        <li class="day"> Wednesday </li>
+                        <li> <i class="fa-solid fa-cloud-sun-rain">32°C</i> </li>
+                        <br> <i class="fa-solid fa-cloud-bolt">24°C</i> </li>
+                    </ul>
+
+                </div>
+                <div class="col-2 ">
+                    <ul>
+                        <li class="day"> Thursday </li>
+                        <li> <i class="fa-solid fa-cloud-sun-rain">32°C</i> </li>
+                        <br> <i class="fa-solid fa-cloud-bolt">24°C</i> </li>
+                    </ul>
+                </div>
+            </div>
+
+            <ul>
+                <li class="daytime">Day</li>
+                <li class="night">Night</li>
+            </ul>
+
+
+        </div>
+    </div>
+    <script src="src/index.js"></script>
+</body>
+
+</html>
