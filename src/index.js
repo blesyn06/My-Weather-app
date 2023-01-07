@@ -37,7 +37,7 @@ document.querySelector("#city").innerHTML = response.data.name;
 document.querySelector("#temperature").innerHTML = `${Math.round(response.data.main.temp)}°C`;
 document.querySelector("#humidity1").innerHTML = response.data.main.humidity;
 document.querySelector("#wind1").innerHTML = Math.round(response.data.wind.speed);
-document.querySelector("#description").innerHTML = response.data.weather[0].main;
+document.querySelector("#description").innerHTML = response.data.weather[0].description;
 };
 
 

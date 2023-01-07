@@ -2,6 +2,9 @@
 ul {
     list-style: none;
 }
+li::first-letter{
+    text-transform: capitalize;
+}
 
 .forecast {
     text-align: center;
