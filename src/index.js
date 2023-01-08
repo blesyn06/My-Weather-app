@@ -30,6 +30,7 @@ let days = [
 let day = days[now.getDay()];
 let todayDate = `${day}, ${month} ${date}, ${year}`;
 currentDate.innerHTML = `${todayDate}`;
+let iconElement = document.querySelector("#icon");
 
 
 function showWeather(response){
@@ -38,6 +39,14 @@ document.querySelector("#temperature").innerHTML = `${Math.round(response.data.m
 document.querySelector("#humidity1").innerHTML = response.data.main.humidity;
 document.querySelector("#wind1").innerHTML = Math.round(response.data.wind.speed);
 document.querySelector("#description").innerHTML = response.data.weather[0].description;
+ iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+ // getForecast(response.data.coord);
+
 };
 
 
