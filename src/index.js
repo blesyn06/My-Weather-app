@@ -78,9 +78,12 @@ search("Lagos");
 
 
 function searchLocation(position){
-let apiKey = "c8a77112b2faf6684bb4b21a0aa778ae";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+let apiKey = "2t0f397a5b65af57a1a4d84e1o98e202";
+
+let apiUrl = `https://api.shecodes.io/weather/v1/current?lat=${position.coordinates.latitude}
+&lon=${position.coordinates.longitude}&key=${apiKey}&units=metric`;
 axios.get(apiUrl).then(showWeather);
+
 }
 
 
@@ -92,9 +95,9 @@ function getCurrentLocation(event){
 
 function showTemperature(response){
     
-    let theCity = response.data.name;
+    let theCity = response.data.city;
   
-    let temperature = Math.round(response.data.main.temp);
+    let temperature = Math.round(response.data.temperature.current);
 
     let heading = document.querySelector("#temperature");
     heading.innerHTML = `${temperature}℃`;
