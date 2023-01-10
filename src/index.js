@@ -101,7 +101,8 @@ function showTemperature(response){
     let temperature = Math.round(response.data.temperature.current);
 
     let heading = document.querySelector("#temperature");
-    heading.innerHTML = `${temperature}℃`;
+    heading.innerHTML = `${temperature}`;
+    console.log(temperature);
     let h2 = document.querySelector("#city");
     h2.innerHTML = (theCity);
 
