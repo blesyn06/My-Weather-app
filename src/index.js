@@ -30,13 +30,12 @@ let days = [
 let day = days[now.getDay()];
 let todayDate = `${day}, ${month} ${date}, ${year}`;
 currentDate.innerHTML = `${todayDate}`;
-let iconElement = document.querySelector("#icon");
+let iconElement = "#icon";
+ iconElement = document.querySelector("#icon");
 
 
 function showWeather(response){
-  console.log(response);
-    
-
+  
 document.querySelector("#city").innerHTML = response.data.city;
 document.querySelector("#temperature").innerHTML = `${Math.round(response.data.temperature.current)}°C`;
 document.querySelector("#humidity1").innerHTML = response.data.temperature.humidity;
@@ -44,7 +43,7 @@ document.querySelector("#wind1").innerHTML = Math.round(response.data.wind.speed
 document.querySelector("#description").innerHTML = response.data.condition.description;
 
 iconElement.setAttribute(
-    "src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condtion.icon}.png`);
+    "src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
 
    iconElement.setAttribute("alt", response.data.condition.description);
 
@@ -80,8 +79,10 @@ search("Lagos");
 function searchLocation(position){
 let apiKey = "2t0f397a5b65af57a1a4d84e1o98e202";
 
-let apiUrl = `https://api.shecodes.io/weather/v1/current?lat=${position.coordinates.latitude}
-&lon=${position.coordinates.longitude}&key=${apiKey}&units=metric`;
+let apiUrl = `https://api.shecodes.io/weather/v1/current?lat=${position.coords.latitude}&lon=${position.
+coords.longitude}&key=${apiKey}&units=metric`;
+
+
 axios.get(apiUrl).then(showWeather);
 
 }
