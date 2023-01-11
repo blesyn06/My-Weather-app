@@ -37,7 +37,7 @@ let iconElement = "#icon";
 function showWeather(response){
   
 document.querySelector("#city").innerHTML = response.data.city;
-document.querySelector("#temperature").innerHTML = `${Math.round(response.data.temperature.current)}°C`;
+document.querySelector("#temperature").innerHTML = `${Math.round(response.data.temperature.current)}`;
 document.querySelector("#humidity1").innerHTML = response.data.temperature.humidity;
 document.querySelector("#wind1").innerHTML = Math.round(response.data.wind.speed);
 document.querySelector("#description").innerHTML = response.data.condition.description;
@@ -46,6 +46,7 @@ iconElement.setAttribute(
     "src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
 
    iconElement.setAttribute("alt", response.data.condition.description);
+   celsiusTemperature = response.data.temperature.current;
 
 };
 
@@ -67,13 +68,15 @@ search(city);
 }
 
 
+
+
 let searchForm = document.querySelector("#search-form");
 
 searchForm.addEventListener("submit", handleSubmit);
 
 let currentlocationbutton = document.querySelector("#current-location-button")
 currentlocationbutton.addEventListener("click", getCurrentLocation )
-search("Lagos");
+
 
 
 function searchLocation(position){
@@ -102,9 +105,37 @@ function showTemperature(response){
 
     let heading = document.querySelector("#temperature");
     heading.innerHTML = `${temperature}`;
-    console.log(temperature);
+    
     let h2 = document.querySelector("#city");
     h2.innerHTML = (theCity);
 
 }
 
+function showfahrenheitTemperature(event){
+event.preventDefault();
+let temperatureElement = document.querySelector("#temperature");
+celsiuslink.classList.remove("active");
+fahrenheitlink.classList.add("active");
+let fahrenheitTemperature = (celsiusTemperature  * 9 / 5) + 32;
+temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+
+}
+function showcelsiusTemperature(event){
+event.preventDefault();
+let temperatureElement = document.querySelector("#temperature");
+celsiuslink.classList.add("active");
+fahrenheitlink.classList.remove("active");
+temperatureElement.innerHTML = Math.round(celsiusTemperature);
+
+}
+let celsiusTemperature = null;
+
+let fahrenheitlink = document.querySelector("#fahrenheit-link");
+
+fahrenheitlink.addEventListener("click", showfahrenheitTemperature);
+
+let celsiuslink = document.querySelector("#celsius-link");
+
+celsiuslink.addEventListener("click", showcelsiusTemperature);
+
+search("Lagos");

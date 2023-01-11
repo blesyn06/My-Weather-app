@@ -49,11 +49,6 @@ li::first-letter{
     margin-top: 35px;
 }
 
-a:link {
-    text-decoration: none;
-    font-size: 15px;
-}
-
 .rainy {
     font-size: 30px;
 }
@@ -68,12 +63,16 @@ a:link {
 
 
 .units {
-    font-size: 12px;
+    font-size: 38px;
     position: relative;
     margin-left: -5px;
-    font-weight: bold;
-    top: -20px;
+   
 }
+a:link {
+    text-decoration: none;
+
+}
+
 .git{
  
 margin-left: 150px;
@@ -98,4 +97,15 @@ margin-top: 20px;
     margin-right: 5px;
         height: 64px;
         width: 64px;
+}
+     
+.active{
+    color: black;
+    cursor:default;
+
+}
+.active:hover{
+    text-decoration: none;
+    color: black;
+
 }
