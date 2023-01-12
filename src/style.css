@@ -63,9 +63,10 @@ li::first-letter{
 
 
 .units {
-    font-size: 38px;
+    font-size: 15px;
     position: relative;
     margin-left: -5px;
+    top: -20px;
    
 }
 a:link {
@@ -74,8 +75,7 @@ a:link {
 }
 
 .git{
- 
-margin-left: 150px;
+ text-align: center;
 margin-top: 20px;
     
 }
@@ -85,8 +85,9 @@ margin-top: 20px;
         border-width: 5px;
        
         margin: 0 auto;
-        margin-top: 30px;
+     
         background-color: pink;
+        top: -50px;
 
     }
     .temp2{
